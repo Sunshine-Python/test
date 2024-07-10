@@ -480,16 +480,14 @@ def individual_strategy_page():
                     st.dataframe(metrics_df)
 
                 with col_key_metrics:
-                
-                # Display key metrics in a more prominent way
-                col1, col2, col3 = st.columns(3)
-                col1.metric("Total Return", f"{metrics['Return [%]']:.2f}%")
-                col2.metric("Max Drawdown", f"{metrics['Max. Drawdown [%]']:.2f}%")
-                col3.metric("Win Rate", f"{metrics['Win Rate [%]']:.2f}%")
+                    col1, col2, col3 = st.columns(3)
+                    col1.metric("Total Return", f"{metrics['Return [%]']:.2f}%")
+                    col2.metric("Max Drawdown", f"{metrics['Max. Drawdown [%]']:.2f}%")
+                    col3.metric("Win Rate", f"{metrics['Win Rate [%]']:.2f}%")
     
-                col4, col5 = st.columns(2)
-                col4.metric("Best Trade", f"{metrics['Best Trade [%]']:.2f}%")
-                col5.metric("Worst Trade", f"{metrics['Worst Trade [%]']:.2f}%")
+                    col4, col5 = st.columns(2)
+                    col4.metric("Best Trade", f"{metrics['Best Trade [%]']:.2f}%")
+                    col5.metric("Worst Trade", f"{metrics['Worst Trade [%]']:.2f}%")
                 
                 
 
