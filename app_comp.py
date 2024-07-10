@@ -24,14 +24,6 @@ st.set_page_config(layout="wide", page_title="Trading Strategy Analyzer and Comp
 logo_url = "little-john-logo.png"
 st.logo(logo_url)
 
-st.markdown("""
-        <style>
-               #root > div:nth-child(1) > div.withScreencast > div > div > div > section:nth-child(2) {
-                    height: 3rem !important;
-                }
-        </style>
-        """, unsafe_allow_html=True)
-
 def run_strategy(strategy, ticker, start_date, end_date, cash, commission, **params):
     strategy_functions = {
         'SMA Cross': run_sma_cross,
