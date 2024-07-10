@@ -26,6 +26,13 @@ p, span, div {
     font-family: serif !important;  /* Serif Font with !important */
 }
 
+.header .logo {
+    width: 50px; /* Adjust the logo size as needed */
+    height: auto;
+    padding-left: 10px; /* Add padding to the left */
+    margin-right: 20px;
+}
+
 /* Ensure there is no space at the top */
 .main .block-container {
     padding-top: 0 !important;
