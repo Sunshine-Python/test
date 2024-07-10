@@ -26,16 +26,21 @@ p, span, div {
     font-family: serif !important;  /* Serif Font with !important */
 }
 
-/* Remove default margin and padding */
-.css-18e3th9 {
-    padding-top: -20px;
-    padding-bottom: 0;
-}
-.block-container {
-    padding-top: -20px;
-    padding-bottom: 0;
+/* Ensure there is no space at the top */
+.main .block-container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
 
 
 
