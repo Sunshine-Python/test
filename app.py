@@ -32,7 +32,7 @@ load_css("style.css")
 def main():
     st.title('Little John')
 
-    col1, col2 = st.columns([1, 10])
+    col1, col2 = st.columns([1, 100])
 
     with col1:
         ticker = st.text_input('Enter stock ticker', value='AAPL')
