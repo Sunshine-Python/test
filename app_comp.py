@@ -298,116 +298,179 @@ def individual_strategy_page():
             enable_take_profit = st.checkbox('Enable Take Profit', value=True)
 
     with col2:
-        #with st.spinner('Running backtest...'):
-            data = fetch_data(ticker, start_date, end_date)
-            
-            if data.empty:
-                st.warning("No data available for the selected date range.")
-            else:
-                if strategy == 'SMA Cross':
+        data = fetch_data(ticker, start_date, end_date)
+        
+        if data.empty:
+            st.warning("No data available for the selected date range.")
+        else:
+            if strategy == 'SMA Cross':
+                col2_1, col2_2 = st.columns([1,1])
+                with col2_1:
                     st.subheader('SMA Cross Visualization')
                     sma_cross_viz(data, sma_short, sma_long)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_sma_cross(ticker, start_date, end_date, cash, commission, sma_short, sma_long, 
                                            stop_loss_pct, take_profit_pct, enable_shorting, 
                                            enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'RSI Cross':
+            elif strategy == 'RSI Cross':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('RSI Cross Visualization')
                     rsi_cross_viz(data, rsi_sma_short, rsi_sma_long, rsi_period)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_rsi_cross(ticker, start_date, end_date, cash, commission, rsi_sma_short, rsi_sma_long, 
                                            rsi_period, stop_loss_pct, take_profit_pct, enable_shorting, 
                                            enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'Bollinger Bands':
+            elif strategy == 'Bollinger Bands':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('Bollinger Bands Visualization')
                     bollinger_bands_viz(data, bb_period, bb_std_dev)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_bollinger_bands(ticker, start_date, end_date, cash, commission, bb_period, bb_std_dev,
                                                  stop_loss_pct, take_profit_pct, enable_shorting, 
                                                  enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'MACD':
+            elif strategy == 'MACD':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('MACD Visualization')
                     macd_viz(data, macd_fast, macd_slow, macd_signal)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_macd_strategy(ticker, start_date, end_date, cash, commission, macd_fast, macd_slow, macd_signal,
                                                stop_loss_pct, take_profit_pct, enable_shorting, 
                                                enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'VWAP':
+            elif strategy == 'VWAP':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('VWAP Visualization')
                     vwap_viz(data, vwap_periods)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_vwap_strategy(ticker, start_date, end_date, cash, commission, vwap_periods,
                                                stop_loss_pct, take_profit_pct, enable_shorting, 
                                                enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'Stochastic':
+            elif strategy == 'Stochastic':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('Stochastic Visualization')
                     stoch_viz(data, stoch_k, stoch_d, stoch_overbought, stoch_oversold)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_stoch_strategy(ticker, start_date, end_date, cash, commission, stoch_k, stoch_d, 
                                                 stoch_overbought, stoch_oversold, stop_loss_pct, take_profit_pct, 
                                                 enable_shorting, enable_stop_loss, enable_take_profit)
-                    
-                elif strategy == 'Mean Reversion':
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
+
+            elif strategy == 'Mean Reversion':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('Mean Reversion Visualization')
                     mean_reversion_viz(data, mr_period, mr_entry_std, mr_exit_std)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_mean_reversion(ticker, start_date, end_date, cash, commission, mr_period, mr_entry_std, 
                                                 mr_exit_std, stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, 
-                                                enable_take_profit)                    
+                                                enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'Momentum':
+            elif strategy == 'Momentum':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('Momentum Visualization')
-                    data = fetch_data(ticker, start_date, end_date)
-                    if not data.empty:
-                        momentum_viz(data, mom_period, mom_threshold)
-                        output = run_momentum(ticker, start_date, end_date, cash, commission, mom_period, mom_threshold, 
-                                            stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
-                    else:
-                        st.warning("No data available for the selected date range.")
+                    momentum_viz(data, mom_period, mom_threshold)
+                with col2_2:
+                    st.subheader('Strategy Performance')
+                    output = run_momentum(ticker, start_date, end_date, cash, commission, mom_period, mom_threshold, 
+                                          stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'ADX':                    
+            elif strategy == 'ADX':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('ADX Visualization')
-                    data = fetch_data(ticker, start_date, end_date)
-                    if not data.empty:
-                        adx_viz(data, adx_period, adx_threshold)
-                        output = run_adx(ticker, start_date, end_date, cash, commission, adx_period, adx_threshold, 
-                                        stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
-                    else:
-                        st.warning("No data available for the selected date range.")
-                    
-                elif strategy == 'CCI': 
+                    adx_viz(data, adx_period, adx_threshold)
+                with col2_2:
+                    st.subheader('Strategy Performance')
+                    output = run_adx(ticker, start_date, end_date, cash, commission, adx_period, adx_threshold, 
+                                     stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
+
+            elif strategy == 'CCI':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('CCI Visualization')
                     cci_viz(data, cci_period)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_cci(ticker, start_date, end_date, cash, commission, cci_period, cci_overbought, cci_oversold, 
-                                        stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
+                                     stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'DPO':
+            elif strategy == 'DPO':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('DPO Visualization')
-                    data = fetch_data(ticker, start_date, end_date)
-                    if not data.empty:
-                        output = run_dpo(ticker, start_date, end_date, cash, commission, dpo_period, dpo_threshold,
-                                        stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
-                    else:
-                        st.warning("No data available for the selected date range.")
-                    
-                elif strategy == 'OBV':
+                with col2_2:
+                    st.subheader('Strategy Performance')
+                    output = run_dpo(ticker, start_date, end_date, cash, commission, dpo_period, dpo_threshold,
+                                     stop_loss_pct, take_profit_pct, enable_shorting, enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
+
+            elif strategy == 'OBV':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('OBV Visualization')
                     obv_viz(data, obv_periods)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_obv_strategy(ticker, start_date, end_date, cash, commission, obv_periods,
-                                            stop_loss_pct, take_profit_pct, enable_shorting, 
-                                            enable_stop_loss, enable_take_profit)
-                
-                elif strategy == 'ATR':
+                                              stop_loss_pct, take_profit_pct, enable_shorting, 
+                                              enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
+
+            elif strategy == 'ATR':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('ATR Visualization')
                     atr_viz(data, atr_period, atr_multiplier)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_atr_strategy(ticker, start_date, end_date, cash, commission, atr_period, atr_multiplier,
-                                            stop_loss_pct, take_profit_pct, enable_shorting, 
-                                            enable_stop_loss, enable_take_profit)
+                                              stop_loss_pct, take_profit_pct, enable_shorting, 
+                                              enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
-                elif strategy == 'Standard Deviation':
+            elif strategy == 'Standard Deviation':
+                col2_1, col2_2 = st.columns(2)
+                with col2_1:
                     st.subheader('Standard Deviation Visualization')
                     std_dev_viz(data, std_period, std_multiplier)
+                with col2_2:
+                    st.subheader('Strategy Performance')
                     output = run_std_dev_strategy(ticker, start_date, end_date, cash, commission, std_period, std_multiplier,
-                                                stop_loss_pct, take_profit_pct, enable_shorting, 
-                                                enable_stop_loss, enable_take_profit)
+                                                  stop_loss_pct, take_profit_pct, enable_shorting, 
+                                                  enable_stop_loss, enable_take_profit)
+                    plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
+
+
+
+
+
+            
                 
             if output is not None:
                 st.subheader('Strategy Performance')
