@@ -27,7 +27,7 @@ p, span, div {
 }
 
 .stExpander {
-    width: 100px; /* Adjust this value as needed */
+    width: 50px; /* Adjust this value as needed */
     margin: 0 auto; /* Center the expander */
 }
 
