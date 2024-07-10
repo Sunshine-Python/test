@@ -26,25 +26,31 @@ st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer an
 # Add custom CSS to position the select box
 st.markdown("""
     <style>
-        .page-selection {
-            position: fixed;
-            top: -20px;
-            left: 10px;
-            z-index: 1000;
-            width: 100%;
-            background-color: white;
-            padding: 10px 10px 10px 10px;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
         }
-        .page-selection select {
-            width: 300px;
+        .header .title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .header .selectbox {
+            margin-left: auto;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# Add the select box within a div with the custom CSS class
-st.markdown('<div class="page-selection">', unsafe_allow_html=True)
+# Add the header with the title and select box
+st.markdown('<div class="header">', unsafe_allow_html=True)
+st.markdown('<div class="title">Little John</div>', unsafe_allow_html=True)
+st.markdown('<div class="selectbox">', unsafe_allow_html=True)
 page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
 st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
