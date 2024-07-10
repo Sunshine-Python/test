@@ -20,7 +20,7 @@ from strategies.obv import OBVStrategy, obv_viz, run_obv_strategy
 from strategies.atr import ATRStrategy, atr_viz, run_atr_strategy
 from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_dev_strategy
 
-st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer and Comparator")
+st.set_page_config(layout="wide", page_title="Trading Strategy Analyzer and Comparator")
 logo_url = "little-john-logo.png"
 st.logo(logo_url)
 
@@ -173,7 +173,7 @@ def plot_equity_curves(output1, output2, strategy1, strategy2):
 def main():
     st.title('Little John - Strategy Analyzer and Comparator')
     
-    # page = st.sidebar.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
+    # page = st.sidebar.selectbox("Choose a page", ["Individual Strategy Analysis", "Strategy Comparison"])
     page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
 
     if page == "Individual Strategy":
