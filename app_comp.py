@@ -171,12 +171,12 @@ def plot_equity_curves(output1, output2, strategy1, strategy2):
     st.plotly_chart(fig)
 
 def main():
-    st.title('Little John - Strategy Analyzer and Comparator')
+    st.title('Strategy Analyzer and Comparator')
     
     # page = st.sidebar.selectbox("Choose a page", ["Individual Strategy Analysis", "Strategy Comparison"])
     page = st.selectbox("Choose a page", ["Individual Strategy Analysis", "Strategy Comparison"])
 
-    if page == "Individual Strategy":
+    if page == "Individual Strategy Analysis":
         individual_strategy_page()
     elif page == "Strategy Comparison":
         strategy_comparison_page()
