@@ -212,7 +212,7 @@ def individual_strategy_page():
             commission = st.slider('Commission (%)', min_value=0.0, max_value=1.0, value=0.1, step=0.01)
 
         # Strategy-specific parameters
-        with st.expander("Strategy-Specific Parameters", expanded=True):
+    with st.expander("Strategy-Specific Parameters", expanded=True):
     if strategy == 'SMA Cross':
         st.subheader('SMA Cross Parameters')
         sma_short = st.slider('Short SMA', min_value=5, max_value=50, value=10, key='sma_short')
@@ -288,6 +288,7 @@ def individual_strategy_page():
         std_multiplier = st.slider('Std Dev Multiplier', min_value=1.0, max_value=5.0, value=2.0, step=0.1, key='std_multiplier')
 
     enable_shorting = st.checkbox('Enable Shorting', value=True)
+
 
 
 
