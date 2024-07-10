@@ -173,9 +173,8 @@ def main():
     st.title('Little John - Strategy Analyzer and Comparator')
     
     # page = st.sidebar.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
-    # page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
+    page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
 
-    
     if page == "Individual Strategy":
         individual_strategy_page()
     elif page == "Strategy Comparison":
