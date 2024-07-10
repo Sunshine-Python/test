@@ -289,7 +289,7 @@ def individual_strategy_page():
             std_period = st.slider('Period', min_value=5, max_value=50, value=20, key='std_period')
             std_multiplier = st.slider('Std Dev Multiplier', min_value=1.0, max_value=5.0, value=2.0, step=0.1, key='std_multiplier')
         
-        enable_shorting = st.checkbox('Enable Shorting', value=True)
+         enable_shorting = st.checkbox('Enable Shorting', value=True)
    
 
 
