@@ -61,6 +61,7 @@ def main():
             commission = st.slider('Commission (%)', min_value=0.0, max_value=1.0, value=0.1, step=0.01)
 
         # Strategy-specific parameters
+        
         if strategy == 'SMA Cross':
             st.subheader('SMA Cross Parameters')
             sma_short = st.slider('Short SMA', min_value=5, max_value=50, value=10, key='sma_short')
@@ -155,7 +156,7 @@ def main():
             st.warning("No data available for the selected date range.")
         else:
             if strategy == 'SMA Cross':
-                col2_1, col2_2 = st.columns(2)
+                col2_1, col2_2 = st.columns(0.5,0.5)
                 with col2_1:
                     st.subheader('SMA Cross Visualization')
                     sma_cross_viz(data, sma_short, sma_long)
