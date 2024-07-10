@@ -21,7 +21,8 @@ from strategies.atr import ATRStrategy, atr_viz, run_atr_strategy
 from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_dev_strategy
 
 st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer and Comparator")
-
+logo_url = "little-john-logo.png"
+st.logo(logo_url, icon_image=None)
 
 def run_strategy(strategy, ticker, start_date, end_date, cash, commission, **params):
     strategy_functions = {
