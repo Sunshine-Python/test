@@ -68,7 +68,7 @@ def sma_cross_viz(data, n1=10, n2=20):
     data['Date'] = data['Datetime'].dt.date
     daily_indices = data.groupby('Date').first().index
     
-    fig, ax = plt.subplots(figsize=(7, 3))
+    fig, ax = plt.subplots(figsize=(14, 7))
     ax.plot(data.index[start_idx:], data['Close'][start_idx:], label='Price', color='blue')
     ax.plot(data.index[start_idx:], short_sma[start_idx - n1 + 1:], label=f'SMA({n1})', color='orange')
     ax.plot(data.index[start_idx:], long_sma[start_idx - n2 + 1:], label=f'SMA({n2})', color='green')
@@ -101,7 +101,7 @@ def sma_cross_viz(data, n1=10, n2=20):
     long_sma = np.convolve(data['Close'], np.ones(n2)/n2, mode='valid')
     price = data['Close'].values
 
-    fig, ax = plt.subplots(figsize=(7, 3))
+    fig, ax = plt.subplots(figsize=(14, 7))
     line_price, = ax.plot([], [], label='Price', color='blue')
     line_short_sma, = ax.plot([], [], label=f'SMA({n1})', color='orange')
     line_long_sma, = ax.plot([], [], label=f'SMA({n2})', color='green')
