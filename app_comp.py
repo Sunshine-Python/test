@@ -28,7 +28,7 @@ st.markdown("""
     <style>
         .page-selection {
             position: fixed;
-            top: -10px;
+            top: -20px;
             left: 10px;
             z-index: 1000;
             width: 100%;
