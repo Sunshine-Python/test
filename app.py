@@ -148,14 +148,14 @@ def main():
             enable_take_profit = st.checkbox('Enable Take Profit', value=True)
 
     
-       with col2:
+           with col2:
         data = fetch_data(ticker, start_date, end_date)
         
         if data.empty:
             st.warning("No data available for the selected date range.")
         else:
             if strategy == 'SMA Cross':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('SMA Cross Visualization')
                     sma_cross_viz(data, sma_short, sma_long)
@@ -167,7 +167,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'RSI Cross':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('RSI Cross Visualization')
                     rsi_cross_viz(data, rsi_sma_short, rsi_sma_long, rsi_period)
@@ -179,7 +179,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'Bollinger Bands':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('Bollinger Bands Visualization')
                     bollinger_bands_viz(data, bb_period, bb_std_dev)
@@ -191,7 +191,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'MACD':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('MACD Visualization')
                     macd_viz(data, macd_fast, macd_slow, macd_signal)
@@ -203,7 +203,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'VWAP':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('VWAP Visualization')
                     vwap_viz(data, vwap_periods)
@@ -215,7 +215,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'Stochastic':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('Stochastic Visualization')
                     stoch_viz(data, stoch_k, stoch_d, stoch_overbought, stoch_oversold)
@@ -227,7 +227,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'Mean Reversion':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('Mean Reversion Visualization')
                     mean_reversion_viz(data, mr_period, mr_entry_std, mr_exit_std)
@@ -239,7 +239,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'Momentum':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('Momentum Visualization')
                     momentum_viz(data, mom_period, mom_threshold)
@@ -250,7 +250,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'ADX':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('ADX Visualization')
                     adx_viz(data, adx_period, adx_threshold)
@@ -261,7 +261,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'CCI':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('CCI Visualization')
                     cci_viz(data, cci_period)
@@ -272,7 +272,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'DPO':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('DPO Visualization')
                 with col2_2:
@@ -282,7 +282,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'OBV':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('OBV Visualization')
                     obv_viz(data, obv_periods)
@@ -294,7 +294,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'ATR':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('ATR Visualization')
                     atr_viz(data, atr_period, atr_multiplier)
@@ -306,7 +306,7 @@ def main():
                     plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
 
             elif strategy == 'Standard Deviation':
-                col2_1, col2_2 = st.columns([1, 1])
+                col2_1, col2_2 = st.columns(2)
                 with col2_1:
                     st.subheader('Standard Deviation Visualization')
                     std_dev_viz(data, std_period, std_multiplier)
@@ -368,6 +368,7 @@ def main():
                 st.write("No trade data available.")
         else:
             st.warning("Backtest did not complete successfully. Please check your parameters.")
+
 
 
 
