@@ -210,8 +210,6 @@ def individual_strategy_page():
             end_date = st.date_input('End Date', value=datetime.now())
             cash = st.number_input('Initial Cash', min_value=1000, max_value=1000000, value=10000)
             commission = st.slider('Commission (%)', min_value=0.0, max_value=1.0, value=0.1, step=0.01)
-
-        # Strategy-specific parameters
         
         # Strategy-specific parameters
         with st.expander("Strategy-Specific Parameters", expanded=True):
@@ -292,11 +290,6 @@ def individual_strategy_page():
          enable_shorting = st.checkbox('Enable Shorting', value=True)
    
 
-
-
-
-        
-        
             
         with st.expander("Stop Loss / Take Profit", expanded=True):
             stop_loss_pct = st.slider('Stop Loss %', min_value=0.0, max_value=10.0, value=2.0, step=0.1)
