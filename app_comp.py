@@ -22,6 +22,14 @@ from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_d
 
 st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer and Comparator")
 
+# Function to load CSS file
+def load_css(style):
+    with open(style) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Load CSS
+load_css("style.css")
+
 
 # Add custom CSS to position the title and select box next to each other
 st.markdown("""
