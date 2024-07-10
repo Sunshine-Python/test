@@ -156,7 +156,7 @@ def main():
             st.warning("No data available for the selected date range.")
         else:
             if strategy == 'SMA Cross':
-                col2_1, col2_2 = st.columns([0.5,0.5])
+                col2_1, col2_2 = st.columns([1,1])
                 with col2_1:
                     st.subheader('SMA Cross Visualization')
                     sma_cross_viz(data, sma_short, sma_long)
