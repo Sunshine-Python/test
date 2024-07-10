@@ -174,7 +174,7 @@ def main():
     st.title('Little John - Strategy Analyzer and Comparator')
     
     # page = st.sidebar.selectbox("Choose a page", ["Individual Strategy Analysis", "Strategy Comparison"])
-    page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
+    page = st.selectbox("Choose a page", ["Individual Strategy Analysis", "Strategy Comparison"])
 
     if page == "Individual Strategy":
         individual_strategy_page()
@@ -182,7 +182,7 @@ def main():
         strategy_comparison_page()
 
 def individual_strategy_page():
-    st.header("Individual Strategy Analysis")
+    # st.header("Individual Strategy Analysis")
     col1, col2 = st.columns([1, 2])
 
     with col1:
@@ -466,7 +466,7 @@ def individual_strategy_page():
                 st.warning("Backtest did not complete successfully. Please check your parameters.")
 
 def strategy_comparison_page():
-    st.header("Strategy Comparison")
+    # st.header("Strategy Comparison")
     
     col1, col2 = st.columns(2)
     
