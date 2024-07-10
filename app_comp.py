@@ -472,14 +472,14 @@ def individual_strategy_page():
                 # plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
                 
                 # Place key performance metrics next to performance metrics table
-                col_metrics_table, col_key_metrics = st.columns([2, 3])
+                col_metrics_table, col_key_met = st.columns([2, 3])
                 with col_metrics_table:
                     st.subheader('Key Performance Metrics')
                     metrics_df = pd.DataFrame([metrics]).T
                     metrics_df.columns = ['Value']
                     st.dataframe(metrics_df)
 
-                with col_key_metrics:
+                with col_key_met:
                      col1, col2, col3 = st.columns(3)
                      col1.metric("Total Return", f"{metrics['Return [%]']:.2f}%")
                      col3.metric("Max Drawdown", f"{metrics['Max. Drawdown [%]']:.2f}%")
