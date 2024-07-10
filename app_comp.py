@@ -214,78 +214,78 @@ def individual_strategy_page():
         # Strategy-specific parameters
         
         # Strategy-specific parameters
-        with st.markdown("Strategy-Specific Parameters", expanded=True):
+        with st.subheader("Strategy-Specific Parameters", expanded=True):
          if strategy == 'SMA Cross':
-            st.subheader('SMA Cross Parameters')
+            # st.subheader('SMA Cross Parameters')
             sma_short = st.slider('Short SMA', min_value=5, max_value=50, value=10, key='sma_short')
             sma_long = st.slider('Long SMA', min_value=10, max_value=100, value=20, key='sma_long')
 
          elif strategy == 'RSI Cross':
-            st.subheader('RSI Cross Parameters')
+            # st.subheader('RSI Cross Parameters')
             rsi_period = st.slider('RSI Period', min_value=2, max_value=30, value=14)
             rsi_sma_short = st.slider('RSI Short SMA', min_value=5, max_value=50, value=10, key='rsi_short')
             rsi_sma_long = st.slider('RSI Long SMA', min_value=10, max_value=100, value=20, key='rsi_long')
 
          elif strategy == 'Bollinger Bands':
-            st.subheader('Bollinger Bands Parameters')
+            # st.subheader('Bollinger Bands Parameters')
             bb_period = st.slider('MA Period', min_value=5, max_value=50, value=20, key='bb_period')
             bb_std_dev = st.slider('Std Dev Multiplier', min_value=0.5, max_value=3.0, value=2.0, step=0.1, key='bb_std_dev')
 
          elif strategy == 'MACD':
-            st.subheader('MACD Parameters')
+            # st.subheader('MACD Parameters')
             macd_fast = st.slider('Fast Period', min_value=5, max_value=50, value=12, key='macd_fast')
             macd_slow = st.slider('Slow Period', min_value=10, max_value=100, value=26, key='macd_slow')
             macd_signal = st.slider('Signal Period', min_value=5, max_value=50, value=9, key='macd_signal')
 
          elif strategy == 'VWAP':
-            st.subheader('VWAP Parameters')
+            # st.subheader('VWAP Parameters')
             vwap_periods = st.slider('VWAP Periods', min_value=5, max_value=50, value=20, key='vwap_periods')
 
          elif strategy == 'Stochastic':
-            st.subheader('Stochastic Parameters')
+            # st.subheader('Stochastic Parameters')
             stoch_k = st.slider('K Period', min_value=5, max_value=50, value=14, key='stoch_k')
             stoch_d = st.slider('D Period', min_value=1, max_value=10, value=3, key='stoch_d')
             stoch_overbought = st.slider('Overbought Level', min_value=50, max_value=95, value=80, key='stoch_overbought')
             stoch_oversold = st.slider('Oversold Level', min_value=5, max_value=50, value=20, key='stoch_oversold')
 
          elif strategy == 'Mean Reversion':
-            st.subheader('Mean Reversion Parameters')
+            # st.subheader('Mean Reversion Parameters')
             mr_period = st.slider('Lookback Period', min_value=5, max_value=50, value=20, key='mr_period')
             mr_entry_std = st.slider('Entry Std Dev', min_value=0.5, max_value=3.0, value=2.0, step=0.1, key='mr_entry_std')
             mr_exit_std = st.slider('Exit Std Dev', min_value=0.1, max_value=2.0, value=0.5, step=0.1, key='mr_exit_std')
 
          elif strategy == 'Momentum':
-            st.subheader('Momentum Parameters')
+            # st.subheader('Momentum Parameters')
             mom_period = st.slider('ROC Period', min_value=5, max_value=50, value=14, key='mom_period')
             mom_threshold = st.slider('ROC Threshold', min_value=0.0, max_value=5.0, value=2.0, step=0.1, key='mom_threshold')
 
          elif strategy == 'ADX':
-            st.subheader('ADX Parameters')
+            # st.subheader('ADX Parameters')
             adx_period = st.slider('ADX Period', min_value=5, max_value=50, value=14, key='adx_period')
             adx_threshold = st.slider('ADX Threshold', min_value=10, max_value=50, value=25, key='adx_threshold')
 
          elif strategy == 'CCI':
-            st.subheader('CCI Parameters')
+            # st.subheader('CCI Parameters')
             cci_period = st.slider('CCI Period', min_value=5, max_value=50, value=20, key='cci_period')
             cci_overbought = st.slider('Overbought Level', min_value=50, max_value=200, value=100, key='cci_overbought')
             cci_oversold = st.slider('Oversold Level', min_value=-200, max_value=-50, value=-100, key='cci_oversold')
 
          elif strategy == 'DPO':
-            st.subheader('DPO Parameters')
+            # st.subheader('DPO Parameters')
             dpo_period = st.slider('DPO Period', min_value=5, max_value=50, value=20, key='dpo_period')
             dpo_threshold = st.slider('DPO Threshold', min_value=0.0, max_value=5.0, value=0.5, step=0.1, key='dpo_threshold')
 
          elif strategy == 'OBV':
-            st.subheader('OBV Parameters')
+            # st.subheader('OBV Parameters')
             obv_periods = st.slider('OBV SMA Periods', min_value=5, max_value=50, value=20, key='obv_periods')
 
          elif strategy == 'ATR':
-            st.subheader('ATR Parameters')
+            # st.subheader('ATR Parameters')
             atr_period = st.slider('ATR Period', min_value=5, max_value=50, value=14, key='atr_period')
             atr_multiplier = st.slider('ATR Multiplier', min_value=1.0, max_value=5.0, value=2.0, step=0.1, key='atr_multiplier')
 
          elif strategy == 'Standard Deviation':
-            st.subheader('Standard Deviation Parameters')
+            # st.subheader('Standard Deviation Parameters')
             std_period = st.slider('Period', min_value=5, max_value=50, value=20, key='std_period')
             std_multiplier = st.slider('Std Dev Multiplier', min_value=1.0, max_value=5.0, value=2.0, step=0.1, key='std_multiplier')
         
