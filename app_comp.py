@@ -29,12 +29,13 @@ st.markdown("""
         .header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            width: 100%;
             padding: 10px 0;
         }
         .header .title {
             font-size: 2rem;
             font-weight: bold;
-            margin-right: auto;
         }
         .header .selectbox {
             margin-left: 20px;
@@ -46,9 +47,10 @@ st.markdown("""
 st.markdown('<div class="header">', unsafe_allow_html=True)
 st.markdown('<div class="title">Little John - Strategy Analyzer and Comparator</div>', unsafe_allow_html=True)
 st.markdown('<div class="selectbox">', unsafe_allow_html=True)
-page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
+page = st.selectbox("", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
 st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
