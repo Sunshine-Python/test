@@ -214,7 +214,7 @@ def individual_strategy_page():
         # Strategy-specific parameters
         
         # Strategy-specific parameters
-        with st.expander("Strategy-Specific Parameters", expanded=True):
+        with st.markdown("Strategy-Specific Parameters", expanded=True):
          if strategy == 'SMA Cross':
             st.subheader('SMA Cross Parameters')
             sma_short = st.slider('Short SMA', min_value=5, max_value=50, value=10, key='sma_short')
