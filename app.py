@@ -63,7 +63,7 @@ def main():
         # Add strategy-specific parameters
         with st.expander("Strategy-Specific Parameters", expanded=True):
     if strategy == 'SMA Cross':
-        st.subheader('SMA Cross Parameters')
+        # st.subheader('SMA Cross Parameters')
         sma_short = st.slider('Short SMA', min_value=5, max_value=50, value=10, key='sma_short')
         sma_long = st.slider('Long SMA', min_value=10, max_value=100, value=20, key='sma_long')
 
