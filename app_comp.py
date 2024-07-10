@@ -473,8 +473,8 @@ def individual_strategy_page():
             
                 
             if output is not None:
-                st.subheader('Strategy Performance')
-                plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
+                # st.subheader('Strategy Performance')
+                # plot_strat_perf(output, f"{strategy} Strategy Performance - {ticker}")
                 
                 st.subheader('Key Performance Metrics')
                 metrics = display_metrics(output)
