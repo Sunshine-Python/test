@@ -30,7 +30,7 @@ st.markdown("""
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 50%;
+            width: 100%;
             padding: 10px 0;
         }
         .header .title {
@@ -39,16 +39,22 @@ st.markdown("""
         }
         .header .selectbox {
             margin-left: 20px;
-            width: 50%;
+            flex-grow: 1;
+        }
+        .header .selectbox select {
+            width: 100%;
         }
     </style>
 """, unsafe_allow_html=True)
 
 # Add the header with the title and select box
 st.markdown('<div class="header">', unsafe_allow_html=True)
-st.markdown('<div class="title">Little John</div>', unsafe_allow_html=True)
-page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
+st.markdown('<div class="title">Little John - Strategy Analyzer and Comparator</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
+
+# Insert the selectbox within the styled div
+page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection', label_visibility='collapsed')
+
 
 
 
