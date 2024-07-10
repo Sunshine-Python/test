@@ -485,9 +485,9 @@ def individual_strategy_page():
                     col2.metric("Max Drawdown", f"{metrics['Max. Drawdown [%]']:.2f}%")
                     col3.metric("Win Rate", f"{metrics['Win Rate [%]']:.2f}%")
     
-                    col4, col5 = st.columns(2)
-                    col4.metric("Best Trade", f"{metrics['Best Trade [%]']:.2f}%")
-                    col5.metric("Worst Trade", f"{metrics['Worst Trade [%]']:.2f}%")
+                    co4, co5 = st.columns(2)
+                    co4.metric("Best Trade", f"{metrics['Best Trade [%]']:.2f}%")
+                    co5.metric("Worst Trade", f"{metrics['Worst Trade [%]']:.2f}%")
                 
                 
 
