@@ -6,8 +6,6 @@ secondaryBackgroundColor = "rgba(228, 241, 254)"  # light blue
 textColor = "#000000"  # black
 font = "serif"
 
-hideTopBar = true
-
 # Optional: Add a custom theme color for secondary text
 [customTheme]
 # secondaryTextColor = "#0d3d66"  # dark blue
