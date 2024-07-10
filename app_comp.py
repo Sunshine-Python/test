@@ -22,14 +22,21 @@ from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_d
 
 st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer and Comparator")
 
+
 # Add custom CSS to position the select box
 st.markdown("""
     <style>
         .page-selection {
             position: fixed;
-            top: 10px;
+            top: -10px;
             left: 10px;
             z-index: 1000;
+            width: 100%;
+            background-color: white;
+            padding: 10px 10px 10px 10px;
+        }
+        .page-selection select {
+            width: 300px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -38,6 +45,8 @@ st.markdown("""
 st.markdown('<div class="page-selection">', unsafe_allow_html=True)
 page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
 st.markdown('</div>', unsafe_allow_html=True)
+
+
 
 
 def run_strategy(strategy, ticker, start_date, end_date, cash, commission, **params):
