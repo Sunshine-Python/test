@@ -148,7 +148,7 @@ def main():
             enable_take_profit = st.checkbox('Enable Take Profit', value=True)
 
     
-    with col2:
+       with col2:
         data = fetch_data(ticker, start_date, end_date)
         
         if data.empty:
@@ -368,6 +368,7 @@ def main():
                 st.write("No trade data available.")
         else:
             st.warning("Backtest did not complete successfully. Please check your parameters.")
+
 
 
 
