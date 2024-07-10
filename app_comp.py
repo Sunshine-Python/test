@@ -30,7 +30,7 @@ st.markdown("""
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
+            width: 50%;
             padding: 10px 0;
         }
         .header .title {
@@ -39,6 +39,7 @@ st.markdown("""
         }
         .header .selectbox {
             margin-left: 20px;
+            width: 50%;
         }
     </style>
 """, unsafe_allow_html=True)
