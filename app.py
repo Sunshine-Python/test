@@ -32,8 +32,6 @@ load_css("style.css")
 def main():
     st.title('Little John')
 
-    page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
-
     col1, col2 = st.columns([1, 4])
 
     with col1:
