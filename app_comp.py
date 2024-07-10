@@ -183,7 +183,7 @@ def main():
 
 def individual_strategy_page():
     # st.header("Individual Strategy Analysis")
-    col1, col2 = st.columns([1, 2])
+    col1, col2 = st.columns([1, 3])
 
     with col1:
         ticker = st.text_input('Enter stock ticker', value='AAPL')
