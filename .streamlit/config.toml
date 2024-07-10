@@ -1,8 +1,8 @@
 [theme]
 
-primaryColor = "#0d3d66"  # dark blue
+primaryColor = "rgba(228, 241, 254)"  # light blue
 backgroundColor = "#141B2C"  # very dark blue
-secondaryBackgroundColor = "rgba(228, 241, 254)"  # light blue
+secondaryBackgroundColor = "#0d3d66"  # dark blue
 textColor = "#FFFFFF"  # white
 font = "serif"
 
