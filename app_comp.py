@@ -45,10 +45,8 @@ st.markdown("""
 
 # Add the header with the title and select box
 st.markdown('<div class="header">', unsafe_allow_html=True)
-st.markdown('<div class="title">Little John - Strategy Analyzer and Comparator</div>', unsafe_allow_html=True)
-st.markdown('<div class="selectbox">', unsafe_allow_html=True)
-page = st.selectbox("", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
-st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">Little John</div>', unsafe_allow_html=True)
+page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
 st.markdown('</div>', unsafe_allow_html=True)
 
 
