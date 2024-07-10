@@ -20,6 +20,7 @@ from strategies.atr import ATRStrategy, atr_viz, run_atr_strategy
 from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_dev_strategy
 
 st.set_page_config(layout="wide", page_title="Little John")
+st.logo(image, *, link=None, icon_image=None)
 
 # Function to load CSS file
 def load_css(style):
