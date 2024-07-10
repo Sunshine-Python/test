@@ -23,33 +23,33 @@ from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_d
 st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer and Comparator")
 
 
-# Add custom CSS to position the select box
+# Add custom CSS to position the title and select box next to each other
 st.markdown("""
     <style>
         .header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             padding: 10px 0;
-            border-bottom: 1px solid #eee;
         }
         .header .title {
             font-size: 2rem;
             font-weight: bold;
+            margin-right: auto;
         }
         .header .selectbox {
-            margin-left: auto;
+            margin-left: 20px;
         }
     </style>
 """, unsafe_allow_html=True)
 
 # Add the header with the title and select box
 st.markdown('<div class="header">', unsafe_allow_html=True)
-st.markdown('<div class="title">Little John</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">Little John - Strategy Analyzer and Comparator</div>', unsafe_allow_html=True)
 st.markdown('<div class="selectbox">', unsafe_allow_html=True)
 page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
 st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
