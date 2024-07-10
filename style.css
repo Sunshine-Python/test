@@ -26,6 +26,22 @@ p, span, div {
     font-family: serif !important;  /* Serif Font with !important */
 }
 
+/* Remove default margin and padding */
+.css-18e3th9 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.block-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+
+
+
+
+
 
 
 
