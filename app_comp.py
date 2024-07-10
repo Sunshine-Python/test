@@ -22,6 +22,24 @@ from strategies.standard_deviation import StdDevStrategy, std_dev_viz, run_std_d
 
 st.set_page_config(layout="wide", page_title="Little John - Strategy Analyzer and Comparator")
 
+# Add custom CSS to position the select box
+st.markdown("""
+    <style>
+        .page-selection {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Add the select box within a div with the custom CSS class
+st.markdown('<div class="page-selection">', unsafe_allow_html=True)
+page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"], key='page_selection')
+st.markdown('</div>', unsafe_allow_html=True)
+
+
 def run_strategy(strategy, ticker, start_date, end_date, cash, commission, **params):
     strategy_functions = {
         'SMA Cross': run_sma_cross,
@@ -172,7 +190,7 @@ def main():
     st.title('Little John - Strategy Analyzer and Comparator')
     
     # page = st.sidebar.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
-    page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
+    # page = st.selectbox("Choose a page", ["Individual Strategy", "Strategy Comparison"])
 
     
     if page == "Individual Strategy":
