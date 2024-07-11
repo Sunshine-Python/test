@@ -14,7 +14,6 @@ h3  {
 }
 
 h2, h4, h5 {
-    font-size: 14px;
     color: #0d3d66 !important;  /* Dark Blue with !important */
     font-family: serif !important;
 }
